@@ -1,13 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Document</title>
-        <link rel="stylesheet" href="styles.css"/>
-        <script
-        type="module"
-        src="https://unpkg.com/ionicon@7.1.0/dist/ionicons/ionicons.esm.js">
-    </script>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup Page</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login-container {
+      margin-top: 80px;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    }
+    .card-header {
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 15px 15px 0 0;
+    }
+    .login-form {
+      padding: 30px;
+    }
+    .form-control {
+      border-radius: 20px;
+    }
+    .btn-login {
+      border-radius: 20px;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-login:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    .forgot-password {
+      text-align: right;
+    }
+    .forgot-password a {
+      color: #007bff;
+    }
+    .signup {
+      text-align: center;
+    }
+    .signup a {
+      color: #007bff;
+    }
+    .slider {
+      background-color: #007bff;
+      height: 6px;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: width 0.4s;
+    }
+    @media (min-width: 768px) {
+      .login-container {
+        margin-top: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 login-container">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>Login</h3>
+        </div>
+        <div class="card-body">
+          <form class="login-form">
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-login">Login</button>
+            <div class="forgot-password">
+              <a href="#">Forgot password?</a>
+            </div>
+          </form>
+        </div>
+        <div class="slider"></div>
+      </div>
+      <div class="signup mt-3">
+        Don't have an account? <a href="#" id="signup-link">Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="display: none;" id="signup-container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 login-container">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <form class="signup-form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="signup-email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="signup-password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-signup">Sign Up</button>
+          </form>
+        </div>
+      </div>
+      <div class="signup mt-3">
+        Already have an account? <a href="#" id="login-link">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#signup-link").click(function() {
+      $("#login-container").hide();
+      $("#signup-container").show();
+    });
+    $("#login-link").click(function() {
+      $("#signup-container").hide();
+      $("#login-container").show();
+    });
+  });
+</script>
+</body>
 </html>
